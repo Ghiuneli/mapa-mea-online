@@ -1,0 +1,26 @@
+Feature: Plasarea unui comentariu 
+Scenario 1: Utilizatorul poate plasa un comentariu
+Given: Utilizatorul se afla in sectiunea "adauga un comentariu"
+When: Utilizatorul tapeaza comentariul "Super"
+And utilizatorul da click pe butonul "adauga un comentariu"
+Then utilizatorul vede comentariu plasat cu succes
+
+WHEN utilizatorul tapeaza un comentariu "Fain!"
+AND utilizatorul da click pe butonul "adauga un comentariu"
+THEN utilizarul vede comentariu plasat cu succes
+WHEN utilizatorul tapeaza un comentariu " Cool!"
+AND utilizatorul da click pe butonul "adauga un comentariu"
+THEN utilizarul vede comentariu plasat cu succes
+
+Scenario 2: Utilizatorul nu poate plasa un comentariu
+GIVEN utilizatorul nelogat se afla in sectiunea "adauga un comentariu"
+WHEN utilizatorul tapeaza comentariu " super" 
+AND utilizatorul da click pe butonul "adauga un comentariu"
+THEN utilizatorul nu vede comentariu plasat 
+GIVEN utilizatorul logat se afla in sectiunea "adauga un comentariu"
+WHEN utilizatorul nu scrie un comentariu
+AND utilizatorul da click pe butonul "adauga un comentariu"
+THEN utilizatorul nu vede comentariu plasat 
+WHEN utilizatorul tapeaza un comentariu " cool"
+AND utilizatorul nu da click pe butonul "adauga un comentariu"
+THEN utilizatorul nu vede recenzia amplasata cu succes
